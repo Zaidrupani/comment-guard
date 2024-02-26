@@ -1,0 +1,11 @@
+.panalyze {
+    position: absolute; /* Positioning the <div> independently */
+    font-weight: 600;
+    top: 18%; /* Adjust as needed */
+    left: 62%; /* Adjust as needed */
+  }
+  
+  .analyzeline {
+    width: 100%;
+    border: 1px solid black;
+  }

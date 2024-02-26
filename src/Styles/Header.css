@@ -1,0 +1,49 @@
+.head {
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .phead {
+    color: black;
+    margin-left: 55px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+  }
+
+  .hamburger-icon{
+    color: black;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust the top position as needed */
+    right: 60px;
+    background-color: #ffcdae; /* Background color for the menu */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add box shadow for a raised look */
+  }
+
+  .menu-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+
+  .menu-links a:hover {
+    text-decoration: underline;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+  }
