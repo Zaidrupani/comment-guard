@@ -11,7 +11,7 @@ import { useState } from "react";
 
 function App() {
   const [isUser, setUser] = useState(localStorage.getItem('accessToken'));
-  console.log(isUser + "Loda hai zaid");
+  console.log(isUser + "zaid");
   return (
     <Router>
       <GoogleOAuthProvider clientId="69380516169-d1uig3127bt64u4rc8bq4t2fufum391a.apps.googleusercontent.com"> {/* Wrap the entire application with GoogleOAuthProvider */}
