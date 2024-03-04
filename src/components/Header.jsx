@@ -1,8 +1,6 @@
 import React from 'react';
 import HomeHeader from './HomeHeader';
 import '../Styles/Header.css';
-import { Link } from '@material-ui/core';
-import { useState } from 'react';
 
 const Header = ({isUser, setUser}) => {
   const home = window.location.pathname === '/';

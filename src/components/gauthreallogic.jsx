@@ -1,11 +1,14 @@
 import React from 'react';
-import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
-const GoogleAuth = ({setUser,  onLoginSuccess, onLoginError }) => {
+
+
+const GoogleAuth = ({ setUser, onLoginSuccess, onLoginError }) => {
   const navigate = useNavigate();
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
+      console.log("login is succesful")
       onLoginSuccess();
       console.log(tokenResponse);
       localStorage.setItem('accessToken', tokenResponse.access_token)

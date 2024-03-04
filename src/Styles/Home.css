@@ -13,115 +13,162 @@
     }
 
     .container {
-        display: flex;
-        flex-wrap: wrap; 
-        /* background-image: url('Desktop\ -\ 13.png'); */
-        max-width: 500px;
-        margin-left: 725px;
-      }
+      display: flex;
+      flex-wrap: wrap;
+      /* background-image: url('Desktop\ -\ 13.png'); */
+      max-width: 500px;
+      margin-left: 725px;
+    }
 
-      .hello {
-        color: black;
-        font-family: "Montserrat", sans-serif;
-        font-weight: bold ;
-        font-size: 48px; 
-        margin: 40px;
-        margin-left: 45rem;
-      }
-      
-      .welcome {
-        color: #FF6E1D;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700px;
-        font-size: 48px;  
-      }
+    .hello {
+      color: black;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      font-size: 48px;
+      margin: 40px;
+      margin-left: 45rem;
+    }
 
-      .login {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 10px;
-        font-size: 16px;
-        border: 2px solid #FF6E1D;
-        margin-left: 800px;
-        margin-top: 50px;
-        transition: all 1s ease;
-      }
-      
-      .login:hover {
-        background-color:#ffcdae ;
-        transform: scale(1.1);
-      }
-      
-      .google-logo {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-      }
+    .welcome {
+      color: #FF6E1D;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700px;
+      font-size: 48px;
+    }
 
-      /* landing css */
+    .login {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 16px;
+      border: 2px solid #FF6E1D;
+      margin-left: 800px;
+      margin-top: 50px;
+      transition: all 1s ease;
+    }
 
-      .landingbg{
-        background-color: #F6E9D7;
-        }
+    .login:hover {
+      background-color: #ffcdae;
+      transform: scale(1.1);
+    }
 
-        .landing-container {
-            display: flex;
-            height: 100vh; 
-          
-            background-size: cover; /* Adjust as needed, e.g., contain, 100% 100%, etc. */
-            background-position: center; /* Adjust as needed */
-          }
-          
-          .left-rectangle {
-            flex: 0 0 26%;  
-            background-color: #FEAA76;
-          }
-          
-          .pland {
-            position: absolute; /* Positioning the <div> independently */
-            font-weight: 600;
-            top: 18%; /* Adjust as needed */
-            left: 62%; /* Adjust as needed */
-          }
-          
-          .landline {
-            width: 100%;
-            border: 1px solid black;
-          }
+    .google-logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
 
-          .layout-container {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-          }
-          
-          .card-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-          }
-          
-          .card-info {
-            width: 500px;
-            margin-left: 20px;
-          }
-          
-          .cards-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 90px;
-            margin-left:30px;
-          }
-          
-          .custom-card {
-            width: 302px;
-            height: 167px;
-          }
-          
+    /* landing css */
+
+    .landingbg {
+      background-color: #F6E9D7;
+    }
+
+    .landing-container {
+      display: flex;
+      height: 100vh;
+
+      background-size: cover;
+      /* Adjust as needed, e.g., contain, 100% 100%, etc. */
+      background-position: center;
+      /* Adjust as needed */
+    }
+
+    .left-rectangle {
+      flex: 0 0 12%;
+      background-color: #FEAA76;
+    }
+
+    .circle {
+      position: absolute;
+      /* top: 50%;
+        left: 6%; Adjust the left position to center the circle */
+      transform: translate(-50%, 0%);
+      bottom: 480px;
+      width: 116px;
+      height: 116px;
+      border-radius: 50%;
+  border: 2px solid black;
+    }
+
+    .pland {
+      position: absolute;
+      /* Positioning the <div> independently */
+      font-weight: 600;
+      top: 18%;
+      /* Adjust as needed */
+      left: 62%;
+      /* Adjust as needed */
+    }
+
+    .landline {
+      width: 100%;
+      border: 1px solid black;
+    }
+
+    .layout-container {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .cards-section {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 70px;
+    }
+
+    .card-wrapper {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .custom-card {
+      /* margin-top: 100px; */
+      margin-left: 35px;
+      height: 167px;
+      width: 302px;
+      /* Adjust the width as needed */
+
+    }
+
+    .card-info {
+      /* display: flex; */
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 40px;
+      font-weight: 500;
+      /* margin-top: 20px;   */
+
+    }
+
+    .cardButton {
+      background-color: #D9D9D9;
+      color: rgb(0, 0, 0);
+      padding: 6px 15px;
+      /* border: black;   */
+      border-radius: 5px;
+      cursor: pointer;
+      /* margin-top: px; */
+      margin-left: 300px;
+      margin-top: 120px;
+
+    }
+
+    .cardButton:hover {
+      background-color: #45a049;
+    }
+
+    .video-stats {
+      margin-top: 68px;
+    }
+
+    .video-title {
+      font-weight: 600;
+    }
