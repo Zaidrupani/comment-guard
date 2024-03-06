@@ -1,4 +1,3 @@
-// YouTubeAuth.js
 export const handleYouTubeAuthorization = async (googleAccessToken) => {
   try {
     const apiKey = 'AIzaSyBteZ9hdOcarymodX8PNZ9Rcsz8ivnKLrc'; // Replace with your YouTube API key
@@ -18,14 +17,43 @@ export const handleYouTubeAuthorization = async (googleAccessToken) => {
       throw new Error(`Error fetching uploaded videos: ${errorMessage}`);
     }
 
-    const channelDetailsData = await uploadedVideosResponse.json();
-    const channelImage = channelDetailsData.items[0]?.snippet?.thumbnails?.default.url;
     const uploadedVideosData = await uploadedVideosResponse.json();
 
-    // Create an array to store the video data
-    const videos = [];
+    // Get the channel ID from the first video
+    const channelId = uploadedVideosData.items[0]?.snippet?.channelId;
+
+    // Fetch channel details
+    const channelDetailsResponse = await fetch(
+      `https://www.googleapis.com/youtube/v3/channels?part=snippet,contentDetails,statistics&id=${channelId}&key=${apiKey}`,
+      {
+        headers: {
+          Authorization: `Bearer ${googleAccessToken}`,
+        },
+      }
+    );
+
+    if (!channelDetailsResponse.ok) {
+      const errorMessage = await channelDetailsResponse.text();
+      throw new Error(`Error fetching channel details: ${errorMessage}`);
+    }
+
+    const channelDetailsData = await channelDetailsResponse.json();
+
+    // Extract relevant channel information
+    const channelName = channelDetailsData.items[0]?.snippet?.title;
+    const totalVideos = channelDetailsData.items[0]?.statistics?.videoCount;
+    const totalViews = channelDetailsData.items[0]?.statistics?.viewCount;
+    const subscriberCount = channelDetailsData.items[0]?.statistics?.subscriberCount;
+    // Log or return the extracted information
+    console.log('Channel Name:', channelName);
+    console.log('Total Videos:', totalVideos);
+    console.log('Total Views:', totalViews);
+    console.log('Subscriber Count:', subscriberCount);
+
 
     // Process each uploaded video
+    const videos = [];
+
     for (const video of uploadedVideosData.items) {
       const title = video.snippet.title;
       const videoId = video.id.videoId;
@@ -34,11 +62,6 @@ export const handleYouTubeAuthorization = async (googleAccessToken) => {
       try {
         const videoDetails = await fetchVideoDetails(apiKey, googleAccessToken, videoId);
         const thumbnailUrl = video.snippet.thumbnails.default.url;
-        // console.log('Video Title:', title);
-        // console.log('Likes:', videoDetails.statistics?.likeCount || 'N/A');
-        // console.log('Views:', videoDetails.statistics?.viewCount || 'N/A');
-        // console.log('Comments:', videoDetails.statistics?.commentCount || 'N/A');
-        // console.log('------------------------');
 
         // Add the video data to the videos array
         videos.push({ title: title, thumbnailUrl, ...videoDetails });
@@ -48,7 +71,7 @@ export const handleYouTubeAuthorization = async (googleAccessToken) => {
     }
 
     // Return the videos array
-    return { videos, channelImage };
+    return videos;
 
   } catch (error) {
     console.error('Error fetching YouTube data:', error.message);

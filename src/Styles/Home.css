@@ -20,12 +20,13 @@
       margin-left: 725px;
     }
 
+
     .hello {
       color: black;
       font-family: "Montserrat", sans-serif;
       font-weight: bold;
       font-size: 48px;
-      margin: 40px;
+      margin: 60px;
       margin-left: 45rem;
     }
 
@@ -34,6 +35,10 @@
       font-family: "Montserrat", sans-serif;
       font-weight: 700px;
       font-size: 48px;
+    }
+
+    .pbody {
+      font-weight: 500;
     }
 
     .login {
@@ -81,20 +86,20 @@
     }
 
     .left-rectangle {
-      flex: 0 0 12%;
+      flex: 0 0 23.5%;
       background-color: #FEAA76;
     }
 
     .circle {
       position: absolute;
-      /* top: 50%;
-        left: 6%; Adjust the left position to center the circle */
+      /* /* top: 50%; */
+        left: 12%;
       transform: translate(-50%, 0%);
       bottom: 480px;
       width: 116px;
       height: 116px;
       border-radius: 50%;
-  border: 2px solid black;
+      border: 2px solid black;
     }
 
     .pland {
@@ -108,8 +113,9 @@
     }
 
     .landline {
-      width: 100%;
-      border: 1px solid black;
+      width: 70%;
+  border: 1px solid black;
+  margin-left: 58px;
     }
 
     .layout-container {
@@ -148,7 +154,7 @@
 
     }
 
-    .cardButton {
+    .analyze-button {
       background-color: #D9D9D9;
       color: rgb(0, 0, 0);
       padding: 6px 15px;
@@ -156,12 +162,12 @@
       border-radius: 5px;
       cursor: pointer;
       /* margin-top: px; */
-      margin-left: 300px;
+      margin-left: 200px;
       margin-top: 120px;
 
     }
 
-    .cardButton:hover {
+    .analyze-button:hover {
       background-color: #45a049;
     }
 
@@ -171,4 +177,24 @@
 
     .video-title {
       font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .channel-details {
+    font-weight: 500;
+    margin-top: 200px;
+    margin-left: 130px;
+    align-content: space-evenly;
+    }
+
+    .refresh {
+      background-color: #D9D9D9;
+      color: rgb(0, 0, 0);
+      padding: 6px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+      margin-top: 40px;
+
+
     }

@@ -2,14 +2,15 @@
   color: black;
   margin-left: 55px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   margin-left: 700px;
   margin-top: 40px;
 }
 
 .resourcesline {
-  width: 100%;
+  width: 75%;
   border: 1px solid black;
+  margin-left: 190px;
 }
 
 .custlaycont {
