@@ -4,7 +4,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Home from "../Pages/Home";
 import Landing from "../Pages/Landing";
-import AboutUs from "../Pages/AboutUs";
+import Analyze from "../Pages/Analyze";
+// import AboutUs from "../Pages/AboutUs";
 import Resources from "../Pages/Resources";
 import { GoogleOAuthProvider } from '@react-oauth/google'; // Import GoogleOAuthProvider
 import { useState } from "react";
@@ -19,8 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={isUser ? <Landing /> : <Home setUser={setUser} user={isUser}/>} />
           {/* <Route path="/landing" element={<Landing />} /> */}
-          <Route path="/about-us" element={<AboutUs />} />
+          {/* <Route path="/about-us" element={<AboutUs />} /> */}
           <Route path="/resources" element={<Resources />} />
+          <Route path="/analyze" element={<Analyze />} />
         </Routes>
         <Footer />
       </GoogleOAuthProvider>

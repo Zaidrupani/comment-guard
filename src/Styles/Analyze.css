@@ -1,11 +1,28 @@
 .panalyze {
-    position: absolute; /* Positioning the <div> independently */
-    font-weight: 600;
-    top: 18%; /* Adjust as needed */
-    left: 62%; /* Adjust as needed */
-  }
-  
-  .analyzeline {
-    width: 100%;
-    border: 1px solid black;
-  }
+  font-weight: 600;
+  margin-top: 50px;
+  margin-left: 900px;
+}
+
+.analyzeline {
+  width: 60%;
+border: 1px solid black;
+margin-left: 490px;
+position: 'absolute'; 
+margin-top: 8px;
+}
+
+.leftrectangle {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  height:100%;
+  width: 23.5%;
+  background-color: #FEAA76;
+}
+
+.thumbnail-rectangle {
+  width: 302px;
+  height: 197px;
+  color: black;
+}

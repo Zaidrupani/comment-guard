@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import { Link, useNavigate } from 'react-router-dom';
 import { handleYouTubeAuthorization } from '../components/Youtubeauth';
 
 const Landing = () => {
@@ -9,6 +10,8 @@ const Landing = () => {
   console.log("yt data", youtubeData[0]);
 
   const [channelInfo, setChannelInfo] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchYouTubeData = async () => {
@@ -19,6 +22,8 @@ const Landing = () => {
 
         // Extract channel information
         const channelName = data[0]?.items[0]?.snippet?.title;
+        console.log('Channel Name:', channelName);
+
         const totalVideos = data[0]?.items[0]?.statistics?.videoCount;
         const totalViews = data[0]?.items[0]?.statistics?.viewCount;
         const subscriberCount = data[0]?.items[0]?.statistics?.subscriberCount;
@@ -35,6 +40,11 @@ const Landing = () => {
     fetchYouTubeData();
   }, []); // Empty dependency array to run the effect only once
 
+  const handleAnalyzeClick = () => {
+    // Redirect to the Analyze page
+    navigate('/analyze');
+  };
+
   return (
     <>
       {youtubeData ? (
@@ -48,8 +58,8 @@ const Landing = () => {
                   <p>Video Count: {channelInfo.totalVideos}</p>  <br />
                   <p>Total Views: {channelInfo.totalViews}</p>  <br />
                   <p>Subscribers: {channelInfo.subscriberCount}</p> <br />
-                  <div>                 <button className='refresh'> Refresh </button>
-                  </div>              </>
+                  <div> <button className='refresh'> Refresh </button> </div>
+                </>
               )}
               </div>
             </div>
@@ -77,7 +87,11 @@ const Landing = () => {
                           Likes: {video.items[0].statistics?.likeCount} <br />
                           Comments: {video.items[0].statistics?.commentCount} </p>
                       </div>
-                      <div> <button type="button" className="analyze-button">Analyze</button> </div>
+                      <div> <Link to="/analyze">
+                        <button type="button" className="analyze-button" onClick={handleAnalyzeClick}>
+                          Analyze
+                        </button>
+                      </Link> </div>
                     </div>
                   ))}
                 </div>

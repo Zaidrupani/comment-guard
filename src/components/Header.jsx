@@ -24,7 +24,7 @@ const Header = ({isUser, setUser}) => {
           </div>
           <div style={rightSide}>
             <a href="/">HOME</a>
-            <a href="/about-us">ABOUT US</a>
+            {/* <a href="/about-us">ABOUT US</a> */}
             <a href="/resources">RESOURCES</a>
             {isUser && <a href='/' onClick={handleLogout}>LOGOUT</a>}
           </div>
@@ -45,7 +45,7 @@ const headerStyle = {
 
 const leftSide = {
   flex: 1,
-  marginLeft: '60px',
+  marginLeft: '30px',
   marginTop: '10px'
 
 };

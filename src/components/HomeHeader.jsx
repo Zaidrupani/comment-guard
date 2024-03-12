@@ -38,7 +38,7 @@ const HomeHeader = ({isUser}) => {
         {isMenuOpen && (
           <div className='menu-links'>
             <a href="/">HOME</a>
-            <a href="/about-us">ABOUT US</a>
+            {/* <a href="/about-us">ABOUT US</a> */}
             <a href="/resources">RESOURCES</a>
             {isUser && <a href='/' onClick={handleLogout}>LOGOUT</a>}
           </div>
